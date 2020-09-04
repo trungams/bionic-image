@@ -314,6 +314,7 @@
     - name: install base packages
       apt:
         pkg: "{{ install_packages }}"
+        dpkg_options: force-confold,force-confdef
         state: latest
         update_cache: yes
         cache_valid_time: 604800
@@ -321,6 +322,7 @@
     - name: remove some packages
       apt:
         pkg: "{{ delete_packages }}"
+        dpkg_options: force-confold,force-confdef
         state: absent
         update_cache: yes
         cache_valid_time: 604800
