@@ -1,4 +1,4 @@
-# Computer Scince Ubuntu 18.04 (Bionic) Image
+# Computer Science Ubuntu 18.04 (Bionic) Image
 
 # HOWTO
 
@@ -7,7 +7,7 @@ __requirements:__
   * arch: adm64
   * ram: 2GB (_more is definitely better_)
   * cpu: 2 (_more is definitely better_)
-  * disk: 25GB (_this is the __minimum__ size_)
+  * disk: 30GB (_this is the __minimum__ size_)
   * Install OpenSSH server: Yes (_when asked_)
   
 1. Install a default Ubuntu Bionic (18.04 LTS) server image in your virtual or physical environment.  
