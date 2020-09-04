@@ -2,7 +2,7 @@
 
 # HOWTO
 
-__requirements:__
+__Requirements:__
   
   * arch: adm64
   * ram: 2GB (_more is definitely better_)
@@ -28,3 +28,6 @@ __requirements:__
  * ansible-playbook -i ./hosts main.yml --ask-sudo-pass
   
  
+# Problems ?
+
+* please report any problems to help@cs.mcgill.ca
