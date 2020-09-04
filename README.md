@@ -16,7 +16,7 @@ __requirements:__
 # Install Dependencies:
  
  * sudo apt update
- * sudo apt install git ansible
+ * sudo apt install ansible
  
 # Clone this repo:
  
