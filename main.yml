@@ -5,6 +5,197 @@
   user: ubuntu
   become: true
 
+  vars:
+    install_packages:
+      - alpine
+      - ant
+      - apt-clone
+      - apt-transport-https
+      - atom
+      - libarmadillo8
+      - libarmadillo-dev
+      - bazel
+      - bison
+      - bsd-mailx
+      - build-essential
+      - cabal-install
+      - cargo
+      - clang
+      - clang-format
+      - cmake
+      - cmake-extras
+      - code
+      - codeblocks
+      - cowsay
+      - crystal
+      - curl
+      - cython
+      - default-jdk
+      - default-jre
+      - diceware
+      - diceware-doc
+      - dosbox
+      - doxygen
+      - emacs
+      - emscripten
+      - exfat-fuse
+      - exfat-utils
+      - expect
+      - figlet
+      - fish
+      - firefox
+      - flex
+      - fortune-mod
+      - fortunes
+      - fsharp
+      - gcc
+      - gcc-8
+      - g++-8
+      - gcc-multilib
+      - geany
+      - geary
+      - gettext
+      - gimp
+      - git
+      - ghostscript
+      - golang
+      - google-chrome-stable
+      - graphviz
+      - gromacs
+      - gsfonts-x11
+      - guake
+      - haskell-platform
+      - haskell-platform-doc
+      - htop
+      - ipython
+      - ipython3
+      - jupyter-notebook
+      - kate
+      - keras-doc
+      - language-pack-*
+      - latexmk
+      - libboost-all-dev
+      - libcontrolsfx-java
+      - libffi-dev
+      - libfuse-dev
+      - libfuse2
+      - libhdf5-dev
+      - libjpeg-dev
+      - libldap2-dev
+      - libncursesw5-dev
+      - libosmesa6-dev
+      - libreoffice
+      - libsasl2-dev
+      - libssl-dev
+      - libpcre16-3
+      - libtiff-tools
+      - llvm
+      - luarocks
+      - maven
+      - mercurial
+      - mesa-utils
+      - mesa-utils-extra
+      - mono-complete
+      - mutt
+      - netbeans
+      - nodejs
+      - nnn
+      - ocaml
+      - octave
+      - okular
+      - opam
+      - openjdk-8-jdk
+      - openjfx
+      - owncloud-client
+      - p7zip-full
+      - pass
+      - pdsh
+      - php
+      - php-mbstring
+      - php-mysql
+      - php-xml
+      - php-zip
+      - pidgin
+      - pinta
+      - plan
+      - plink1.9
+      - postgresql-client
+      - pypy
+      - python
+      - python-pip
+      - python-pygame
+      - python-qt4
+      - python-qt4-dev
+      - python-qt4-gl
+      - python-scipy
+      - python-sklearn
+      - python-vispy
+      - python3
+      - python3.7
+      - python3-django
+      - python3-ipython
+      - python3-keras
+      - python3-notebook
+      - python3-paramiko
+      - python3-scipy
+      - python3-sklearn
+      - python3-theano
+      - python3-tk
+      - python3-venv
+      - qemu
+      - r-base
+      - re2c
+      - ros-melodic-desktop-full
+      - ruby
+      - scala
+      - screen
+      - shellcheck
+      - singularity-container
+      - slack-desktop
+      - smlnj
+      - spyder
+      - spyder3
+      - sqlite3
+      - sshpass
+      - subversion
+      - sublime-text
+      - swig
+      - sysstat
+      - tcl
+      - tcsh
+      - terminator
+      - texlive-full
+      - texstudio
+      - theano-doc
+      - thonny
+      - tmpreaper
+      - tmux
+      - ubuntu-desktop
+      - ubuntu-minimal
+      - ubuntu-restricted-extras
+      - ubuntu-standard
+      - unrar
+      - unzip
+      - update-motd
+      - valgrind
+      - virtualbox
+      - vim
+      - xfsprogs
+      - xterm
+      - xvfb
+      - xz-utils
+      - zlib1g-dev
+      - zsh
+
+    delete_packages:
+      - eclipse
+      - gnome-initial-setup
+      - gnome-software
+      - transmission-common
+      - transmission-gtk
+      - ubuntu-software
+      - ubuntu-web-launchers
+
   tasks:
 
     - name: Get aptitude for upgrade
@@ -23,7 +214,7 @@
       apt_repository:
         repo: deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main
         state: present
-        update_cache=yes
+        update_cache: yes
 
     - name: import the Google Chrome apt key
       apt_key:
@@ -35,7 +226,7 @@
       apt_repository:
         repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
         state: present
-        update_cache=yes
+        update_cache: yes
 
     - name: import the Slack apt key
       apt_key:
@@ -47,7 +238,7 @@
       apt_repository:
         repo: deb https://packagecloud.io/slacktechnologies/slack/debian/ jessie main
         state: present
-        update_cache=yes
+        update_cache: yes
 
     - name: import the sublime-text apt key
       apt_key:
@@ -57,9 +248,9 @@
 
     - name: install sublime-text repository
       apt_repository:
-        repo: deb https://download.sublimetext.com/ apt/stable
+        repo: deb https://download.sublimetext.com/ "apt/stable/"
         state: present
-        update_cache=yes
+        update_cache: yes
 
     - name: import the vscode apt key
       apt_key:
@@ -71,7 +262,7 @@
       apt_repository:
         repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
         state: present
-        update_cache=yes
+        update_cache: yes
 
     - name: import the bazel apt key
       apt_key:
@@ -83,7 +274,7 @@
       apt_repository:
         repo: deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8
         state: present
-        update_cache=yes
+        update_cache: yes
 
     - name: import the crystal apt key
       apt_key:
@@ -95,7 +286,7 @@
       apt_repository:
         repo: deb https://dist.crystal-lang.org/apt crystal main
         state: present
-        update_cache=yes
+        update_cache: yes
 
     - name: import the NeuroDebian apt key
       apt_key:
@@ -107,210 +298,30 @@
       apt_repository:
         repo: deb http://neuro.debian.net/debian bionic main contrib non-free
         state: present
-        update_cache=yes
+        update_cache: yes
 
     - name: import the ros apt key
       apt_key:
          id: C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-         url: hkp://keyserver.ubuntu.com:80
+         keyserver: hkp://keyserver.ubuntu.com:80
          state: present
 
     - name: install ros repository
       apt_repository:
         repo: deb [arch=amd64] http://packages.ros.org/ros/ubuntu bionic main
         state: present
-        update_cache=yes
+        update_cache: yes
 
     - name: install base packages
-          apt: pkg={{item}} state=present update_cache=yes cache_valid_time=604800
-          with_items:
-            - alpine
-            - ant
-            - apt-clone
-            - apt-transport-https
-            - atom
-            - libarmadillo8
-            - libarmadillo-dev
-            - bazel
-            - bison
-            - bsd-mailx
-            - build-essential
-            - cabal-install
-            - cargo
-            - clang
-            - clang-format
-            - cmake
-            - cmake-extras
-            - code
-            - codeblocks
-            - cowsay
-            - crystal
-            - curl
-            - cython
-            - default-jdk
-            - default-jre
-            - diceware
-            - diceware-doc
-            - dosbox
-            - doxygen
-            - emacs
-            - emscripten
-            - exfat-fuse
-            - exfat-utils
-            - expect
-            - figlet
-            - fish
-            - firefox
-            - flex
-            - fortune-mod
-            - fortunes
-            - fsharp
-            - gcc
-            - gcc-8
-            - g++-8
-            - gcc-multilib
-            - geany
-            - geary
-            - gettext
-            - gimp
-            - git
-            - ghostscript
-            - golang
-            - google-chrome-stable
-            - graphviz
-            - gromacs
-            - gsfonts-x11
-            - guake
-            - haskell-platform
-            - haskell-platform-doc
-            - htop
-            - ipython
-            - ipython3
-            - jupyter-notebook
-            - kate
-            - keras-doc
-            - language-pack-*
-            - latexmk
-            - libboost-all-dev
-            - libcontrolsfx-java
-            - libffi-dev
-            - libfuse-dev
-            - libfuse2
-            - libhdf5-dev
-            - libjpeg-dev
-            - libldap2-dev
-            - libncursesw5-dev
-            - libosmesa6-dev
-            - libreoffice
-            - libsasl2-dev
-            - libssl-dev
-            - libpcre16-3
-            - libtiff-tools
-            - llvm
-            - luarocks
-            - maven
-            - mercurial
-            - mesa-utils
-            - mesa-utils-extra
-            - mono-complete
-            - mutt
-            - netbeans
-            - nodejs
-            - nnn
-            - ocaml
-            - octave
-            - okular
-            - opam
-            - openjdk-8-jdk
-            - openjfx
-            - owncloud-client
-            - p7zip-full
-            - pass
-            - pdsh
-            - php
-            - php-mbstring
-            - php-mysql
-            - php-xml
-            - php-zip
-            - pidgin
-            - pinta
-            - plan
-            - plink1.9
-            - postgresql-client
-            - pypy
-            - python
-            - python-pip
-            - python-pygame
-            - python-qt4
-            - python-qt4-dev
-            - python-qt4-gl
-            - python-scipy
-            - python-sklearn
-            - python-vispy
-            - python3
-            - python3.7
-            - python3-django
-            - python3-ipython
-            - python3-keras
-            - python3-notebook
-            - python3-paramiko
-            - python3-scipy
-            - python3-sklearn
-            - python3-theano
-            - python3-tk
-            - python3-venv
-            - qemu
-            - r-base
-            - re2c
-            - ros-melodic-desktop-full
-            - ruby
-            - scala
-            - screen
-            - shellcheck
-            - singularity-container
-            - slack-desktop
-            - smlnj
-            - spyder
-            - spyder3
-            - sqlite3
-            - sshpass
-            - subversion
-            - sublime-text
-            - swig
-            - sysstat
-            - tcl
-            - tcsh
-            - terminator
-            - texlive-full
-            - texstudio
-            - theano-doc
-            - thonny
-            - tmpreaper
-            - tmux
-            - ubuntu-desktop
-            - ubuntu-minimal
-            - ubuntu-restricted-extras
-            - ubuntu-standard
-            - unrar
-            - unzip
-            - update-motd
-            - valgrind
-            - virtualbox
-            - vim
-            - xfsprogs
-            - xterm
-            - xvfb
-            - xz-utils
-            - zlib1g-dev
-            - zsh
+      apt:
+        pkg: "{{ install_packages }}"
+        state: latest
+        update_cache: yes
+        cache_valid_time: 604800
 
     - name: remove some packages
-          apt: pkg={{item}} state=absent update_cache=yes cache_valid_time=604800
-          with_items:
-            - eclipse
-            - gnome-initial-setup
-            - gnome-software
-            - transmission-common
-            - transmission-gtk
-            - ubuntu-software
-            - ubuntu-web-launchers
+      apt:
+        pkg: "{{ delete_packages }}"
+        state: absent
+        update_cache: yes
+        cache_valid_time: 604800
