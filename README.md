@@ -1,4 +1,4 @@
-# Current School of Computer Scince Ubuntu 18.04 (Ubuntu Bionic) software stack
+# Computer Scince Ubuntu 18.04 (Bionic) Image
 
 # HOWTO
 
