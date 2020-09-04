@@ -10,13 +10,13 @@ __requirements:__
   * disk: 30GB (_this is the __minimum__ size_)
   * Install OpenSSH server: Yes (_when asked_)
   
-1. Install a default Ubuntu Bionic (18.04 LTS) server image in your virtual or physical environment.  
-2. ssh into your new server or open a text console
+ 1. Install a default Ubuntu Bionic (18.04 LTS) server image in your virtual or physical environment.  
+ 2. ssh into your new server or open a text console
 
 # Install Dependencies:
  
- sudo apt update
- sudo apt install git ansible
+ * sudo apt update
+ * sudo apt install git ansible
  
 # Clone this repo:
  
@@ -24,7 +24,7 @@ __requirements:__
    
 # Run playbook (_note: you will have to run this twice_)
 
-  cd bionic-image
-  ansible-playbook -i ./hosts main.yml --ask-sudo-pass
+ * cd bionic-image
+ * ansible-playbook -i ./hosts main.yml --ask-sudo-pass
   
  
